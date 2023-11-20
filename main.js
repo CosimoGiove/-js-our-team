@@ -19,7 +19,7 @@ const membriTeam = [
     {
         nome: "Wayne Barnett",
         ruolo: "Founder & CEO",
-        immagine: "wayne-barnett-founder-cel.jpg",
+        immagine: "wayne-barnett-founder-ceo.jpg",
     },
 
     {
@@ -55,23 +55,29 @@ console.log(membriTeam)
 for (let key in membriTeam) {
     console.log(membriTeam[key])
 }
-
 const membri1 = document.querySelector(".membri")
-for (let i = 0; i < membriTeam.length; i++) {
-    //nome
-    const elemento = document.createElement("h2");
-    elemento.append(membriTeam[i].nome);
-    const membri1 = document.querySelector(".membri")
-    membri1.append(elemento)
-    // creazione ruolo
-    const ruolo = document.createElement("span");
-    ruolo.append(membriTeam[i].ruolo);
-    membri1.append(ruolo);
-    // creazione foto
-    const foto = document.createElement("div");
-    foto.append(`${"img/"}${membriTeam[i].immagine}`)
-    membri1.append(foto)
+
+function dom(immagine, element,element2) {
+    for (let i = 0; i < membriTeam.length; i++) {
+        // creazione foto
+        const foto = document.createElement(immagine);
+        foto.src = `${"img/"}${membriTeam[i].immagine}`
+        console.log(foto)
+        membri1.append(foto)
+        foto.classList.add("img")
+        //nome
+        const elemento = document.createElement(element);
+        elemento.append(membriTeam[i].nome);
+        membri1.append(elemento)
+        // creazione ruolo
+        const ruolo = document.createElement(element2);
+        ruolo.append(membriTeam[i].ruolo);
+        membri1.append(ruolo);
+        
+    }
 }
+const elementiDom = dom("img","h2","div")
+
 
 
 
