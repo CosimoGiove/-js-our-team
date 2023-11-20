@@ -14,6 +14,7 @@ trasformare la stringa foto in una immagine effettiva sul dom
 
 organizzare i singoli membri in card/schede */
 
+
 const membriTeam = [
     {
         nome: "Wayne Barnett",
@@ -57,25 +58,18 @@ for (let key in membriTeam) {
 
 const membri1 = document.querySelector(".membri")
 for (let i = 0; i < membriTeam.length; i++) {
-    console.log(membriTeam[i])
     //nome
     const elemento = document.createElement("h2");
     elemento.append(membriTeam[i].nome);
-    console.log(elemento);
     const membri1 = document.querySelector(".membri")
-    console.log(membri1)
     membri1.append(elemento)
-
     // creazione ruolo
     const ruolo = document.createElement("span");
     ruolo.append(membriTeam[i].ruolo);
-    console.log(ruolo)
     membri1.append(ruolo);
-
     // creazione foto
     const foto = document.createElement("div");
     foto.append(`${"img/"}${membriTeam[i].immagine}`)
-    console.log(foto)
     membri1.append(foto)
 }
 
